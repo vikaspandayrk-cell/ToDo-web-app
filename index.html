@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="todo-card" aria-labelledby="app-title">
+      <header class="app-header">
+        <p class="eyebrow">Frontend Assignment</p>
+        <h1 id="app-title">Todo App</h1>
+        <p class="subtitle">Add, complete, edit, filter, and delete your daily tasks.</p>
+      </header>
+
+      <form id="todo-form" class="todo-form" novalidate>
+        <label for="todo-input" class="sr-only">Enter a todo task</label>
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Enter your task..."
+          autocomplete="off"
+          maxlength="80"
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <p id="error-message" class="error-message" aria-live="polite"></p>
+
+      <div class="stats" aria-live="polite">
+        <span>Total: <strong id="total-count">0</strong></span>
+        <span>Completed: <strong id="completed-count">0</strong></span>
+      </div>
+
+      <nav class="filters" aria-label="Todo filters">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="active">Active</button>
+        <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+      </nav>
+
+      <ul id="todo-list" class="todo-list" aria-label="Todo list"></ul>
+
+      <p id="empty-state" class="empty-state">No todos yet. Add your first task above.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
